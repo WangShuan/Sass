@@ -1,0 +1,10 @@
+// 變數 可存放常用顏色或字體大小等
+
+$primary: #3f5d45;
+$secondary: #ffe180;
+$light: lighten($primary, 30%);
+$dark: darken($primary, 30%);
+
+// 比如 grid 格線系統的間距 格數
+$gutter-w: 20px;
+$gridNum: 12;

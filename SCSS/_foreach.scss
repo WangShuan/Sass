@@ -1,0 +1,23 @@
+@for $i from 1 to 6 {
+  .box-#{$i} {
+    opacity: $i * 20%;
+  }
+}
+
+@for $i from 6 through 10 {
+  .box-#{$i} {
+    opacity: $i * 20%;
+  }
+}
+
+$themes: (
+  "primary": blue,
+  "danger": red,
+  "dark": #000,
+);
+
+@each $key, $val in $themes {
+  .box-#{$key} {
+    background-color: $val;
+  }
+}

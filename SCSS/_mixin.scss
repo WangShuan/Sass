@@ -1,0 +1,15 @@
+// 將一些特殊或常用的樣式設計成 mixin
+
+// 例如圖片取代文字
+@mixin hideText {
+  text-indent: 101%;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 例如背景圖片置中且伸展
+@mixin bgCover {
+  background-size: cover;
+  background-position: center;
+}

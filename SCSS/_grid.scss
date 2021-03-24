@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box; // 設定後元素的內距和邊框就不會增加元素本身的寬度
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 ($gutter-w / 2);
+}
+
+.row {
+  display: flex;
+  margin: 0 (-($gutter-w / 2));
+  flex-wrap: wrap; // 內容超過 100% 後會換行
+}
+
+// 讓 col 之間無縫隙
+.gutter-0 {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+// 讓 col 置中對齊
+.justify-center {
+  justify-content: center;
+}
+
+%col {
+  max-width: 100%;
+  padding: 0 ($gutter-w / 2);
+  flex-basis: 100%;
+}
+
+@for $i from 1 to $gridNum + 1 {
+  .col-#{$i} {
+    @extend %col;
+  }
+}
+
+// 螢幕寬度大於 767px 後 col 各自的寬度
+@media (min-width: 767px) {
+  @for $i from 1 to $gridNum + 1 {
+    .col-#{$i} {
+      max-width: 100% * ($i / $gridNum);
+      flex-basis: 100% * ($i / $gridNum);
+    }
+  }
+}
